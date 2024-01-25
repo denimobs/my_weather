@@ -43,7 +43,7 @@ class LoginPage extends HookConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final formKey = useMemoized(() => GlobalKey<FormState>());
-    final emailController = useTextEditingController();
+    final emailController = useTextEditingController(text: 'test@test.com');
     final passwordController = useTextEditingController();
 
     ref.listen(loginControllerProvider, (_, state) {

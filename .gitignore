@@ -44,3 +44,6 @@ app.*.map.json
 
 # Exclude generated .g.dart files
 **/*.g.dart
+
+# Environment configuration
+env.json

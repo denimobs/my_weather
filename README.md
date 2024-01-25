@@ -1,16 +1,27 @@
-# my_weather
+# My Weather
 
-A new Flutter project.
+My Weather is a Flutter application that displays the weather in your current location.
+
+## Requirements
+
+- Flutter 3.16.3 or later
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+1. access (Open Weather Api)[https://openweathermap.org/api] and get an API key
 
-A few resources to get you started if this is your first Flutter project:
+2. create a file called `env.json` in the root directory of the project and add the following:
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+```json
+{
+  "OPEN_WEATHER_API_KEY": "YOUR_API_KEY"
+}
+```
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+**note:** every command to run/build the app should include `--dart-define-from-file=env.dev` to apply the values from the `env.dev.json` file
+
+## Running the app
+
+1. run `flutter pub get` to install dependencies
+
+2. run `flutter run --dart-define-from-file=env.dev` to run the app
