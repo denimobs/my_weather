@@ -27,6 +27,7 @@ class PasswordFormField extends HookWidget {
       controller: controller,
       validator: validator,
       obscureText: obscure.value,
+      keyboardType: TextInputType.visiblePassword,
       decoration: InputDecoration(
         hintText: hintText,
         labelText: labelText,

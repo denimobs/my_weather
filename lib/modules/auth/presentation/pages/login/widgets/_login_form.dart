@@ -32,6 +32,7 @@ class _LoginForm extends StatelessWidget {
           TextFormField(
             controller: emailController,
             validator: _validateEmail,
+            keyboardType: TextInputType.emailAddress,
             decoration: const InputDecoration(
               hintText: 'Enter your email',
             ),
