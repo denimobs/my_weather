@@ -6,15 +6,18 @@ class ErrorDialog extends StatelessWidget {
   const ErrorDialog._({
     this.title,
     this.message,
+    this.onOk,
   });
 
   final String? title;
   final String? message;
+  final VoidCallback? onOk;
 
   static Future<void> show({
     required BuildContext context,
     String? title,
     String? message,
+    VoidCallback? onOk,
   }) async {
     return showDialog<void>(
       context: context,
@@ -22,6 +25,7 @@ class ErrorDialog extends StatelessWidget {
         return ErrorDialog._(
           title: title,
           message: message,
+          onOk: onOk,
         );
       },
     );
@@ -44,7 +48,10 @@ class ErrorDialog extends StatelessWidget {
       content: message_,
       actions: [
         TextButton(
-          onPressed: () => context.navigator.pop(),
+          onPressed: () {
+            context.navigator.pop();
+            if (onOk != null) onOk!();
+          },
           child: const Text('OK'),
         ),
       ],
