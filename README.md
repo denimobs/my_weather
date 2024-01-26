@@ -30,7 +30,7 @@ Here are some screenshots of the app on different devices:
 
     ```json
     {
-      "OPEN_WEATHER_API_KEY": "YOUR_API_KEY"
+      "WEATHER_API_KEY": "YOUR_API_KEY"
     }
     ```
 
