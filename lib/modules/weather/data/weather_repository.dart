@@ -13,5 +13,8 @@ WeatherRepository weatherRepository(WeatherRepositoryRef ref) {
 }
 
 abstract interface class WeatherRepository {
-  Future<Either<String, WeatherInfo>> getWeather();
+  Future<Either<String, WeatherInfo>> getWeather({
+    required (double, double) latLng,
+    String units = 'metric',
+  });
 }

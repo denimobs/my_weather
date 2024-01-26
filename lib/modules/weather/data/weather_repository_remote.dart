@@ -9,14 +9,17 @@ class WeatherRepositoryRemote implements WeatherRepository {
   final ClientHttp _client;
 
   @override
-  Future<Either<String, WeatherInfo>> getWeather() async {
+  Future<Either<String, WeatherInfo>> getWeather({
+    required (double, double) latLng,
+    String units = 'metric',
+  }) async {
     try {
       final res = await _client.get(
         url: '/data/2.5/weather',
         queryParameters: {
           'units': 'metric',
-          'lat': -14.8663,
-          'lon': -40.8394,
+          'lat': latLng.$1,
+          'lon': latLng.$2,
         },
       );
 
